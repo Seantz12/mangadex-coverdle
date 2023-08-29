@@ -14,3 +14,6 @@ each Cover object has a url property that returns a link to the cover
 https://stackoverflow.com/questions/32908639/open-pil-image-from-byte-file
 
 this is for grabbing an image
+
+# things that i should probably do 
+* instead of blurring the image in the backend, unblurred image should be passed to front end and then all image modifications should occur there
