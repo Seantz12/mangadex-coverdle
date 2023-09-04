@@ -12,7 +12,7 @@ app = Flask(__name__)
 def hello():
     return render_template('index.html')
 
-@app.route("/pick-random-manga", methods=['GET'])
+@app.route("/get-random-cover", methods=['GET'])
 def get_random_cover():
     random_manga_id = get_random_manga()
     covers = get_cover_urls(random_manga_id)
