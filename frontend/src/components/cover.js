@@ -1,10 +1,19 @@
 import { useState } from 'react';
+// const MFA = require('mangadex-full-api');
 
 function Cover() {
     const [coverURL, setCoverURL] = useState('https://pbs.twimg.com/media/EvEsRgMWQAIWDEu?format=jpg&name=large');
 
-    function getCover() {
-        setCoverURL('https://cdn.myanimelist.net/s/common/store/cover/11274/7c0e668dc5af381f1ec4d723e3a298e197066c2059ca39977c7cf5f00081340b/l.jpg')
+    async function getCover() {
+        // MFA.Cover.get('683a613e-8aa0-4b98-9a62-4138463d6a49');
+        const url = 'http://localhost:1617/get-random-cover';
+        const response = await fetch(url, {
+                method: "GET",
+                mode: "cors"
+            }
+        );
+        const data = await response.json();
+        setCoverURL(data["message"]);
     }
 
     return (

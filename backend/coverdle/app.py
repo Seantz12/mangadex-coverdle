@@ -18,7 +18,9 @@ def get_random_cover():
     covers = get_cover_urls(random_manga_id)
 
     random_cover = random.randint(0, len(covers)-1)
-    return covers[random_cover]
+    response = jsonify(message=covers[random_cover])
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    return response
 
 
 @app.route("/blur-image", methods=['GET'])
